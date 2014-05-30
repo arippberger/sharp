@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 _s
 ===
 
@@ -41,3 +42,9 @@ Then, update the stylesheet header in style.css and the links in footer.php with
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
 Good luck!
+=======
+sharp
+=====
+
+Sharp is a one-page WordPress theme that utilizes Angular.js 
+>>>>>>> a6f4153c9e36cffb412da91e5cf8a1988f1c7767
