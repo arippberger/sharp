@@ -5,7 +5,7 @@ var ctrls = angular.module('sharp.controllers', []);
 ctrls.controller('AppCtrl', function ($scope, $http) {
 });
 
-ctrls.controller('PostsListCtrl', function ($scope, $http, $sce, $routeParams) {
+ctrls.controller('PostsListCtrl', function ($scope, sharp, $http, $sce, $routeParams) {
 	//console.log("running PostsListCtrl");
 	$scope.posts;
 
@@ -14,7 +14,7 @@ ctrls.controller('PostsListCtrl', function ($scope, $http, $sce, $routeParams) {
 	//list posts? pages?
 	var list = $routeParams.list;
 
-	$http.get('http://sharp.dev/wp-json/' + list ).then(function (data) {
+	sharp.list(list).then(function (data) {
 		//posts is posts json
 		$scope.posts = data.data;
 
@@ -28,7 +28,7 @@ ctrls.controller('PostsListCtrl', function ($scope, $http, $sce, $routeParams) {
 	});
 });
 
-ctrls.controller('DateArchiveCtrl', function ($scope, $http, $routeParams) {
+ctrls.controller('DateArchiveCtrl', function ($scope, sharp, $http, $routeParams) {
 	$scope.posts;
 	
 	//get month and year form routeParams
@@ -36,12 +36,13 @@ ctrls.controller('DateArchiveCtrl', function ($scope, $http, $routeParams) {
 	var year = $routeParams.year;
 
 	//site = $rootScope.site + '$routeParams'
-	$http.get('http://sharp.dev/wp-json/posts/?filter[monthnum]=' + month + '&filter[year]=' + year).then(function (data) {
+	sharp.dateArchive(month, year).then(function (data) {
 		$scope.posts = data.data;
 	});
+
 });
 
-ctrls.controller('SingleCtrl', function ($scope, $http, $routeParams, $sce) {
+ctrls.controller('SingleCtrl', function ($scope, sharp, $http, $routeParams, $sce) {
 	$scope.post;
 	
 	//get month and year form routeParams
@@ -49,7 +50,7 @@ ctrls.controller('SingleCtrl', function ($scope, $http, $routeParams, $sce) {
 	var id = $routeParams.id;
 
 	//site = $rootScope.site + '$routeParams'
-	$http.get('http://sharp.dev/wp-json/' + list + '/' + id).then(function (data) {
+	sharp.single(list, id).then(function (data) {
 		$scope.post = data.data;
 		//trust post body
 		$scope.post.trustedHtml = $sce.trustAsHtml($scope.post.content)
