@@ -13,7 +13,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'sharp--activate' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'sharp' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
@@ -30,7 +30,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php sharp__activate_paging_nav(); ?>
+			<?php sharp_activate_paging_nav(); ?>
 
 		<?php else : ?>
 

@@ -10,7 +10,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php sharp__activate_posted_on(); ?>
+			<?php sharp_activate_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -21,10 +21,10 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sharp--activate' ) ); ?>
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sharp' ) ); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'sharp--activate' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'sharp' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -35,29 +35,29 @@
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'sharp--activate' ) );
-				if ( $categories_list && sharp__activate_categorized_blog() ) :
+				$categories_list = get_the_category_list( __( ', ', 'sharp' ) );
+				if ( $categories_list && sharp_activate_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'sharp--activate' ), $categories_list ); ?>
+				<?php printf( __( 'Posted in %1$s', 'sharp' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'sharp--activate' ) );
+				$tags_list = get_the_tag_list( '', __( ', ', 'sharp' ) );
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'sharp--activate' ), $tags_list ); ?>
+				<?php printf( __( 'Tagged %1$s', 'sharp' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'sharp--activate' ), __( '1 Comment', 'sharp--activate' ), __( '% Comments', 'sharp--activate' ) ); ?></span>
+		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'sharp' ), __( '1 Comment', 'sharp' ), __( '% Comments', 'sharp' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'sharp--activate' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'sharp' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

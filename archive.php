@@ -24,46 +24,46 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'sharp--activate' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'sharp' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'sharp--activate' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'sharp' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'sharp--activate' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'sharp--activate' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'sharp' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'sharp' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'sharp--activate' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'sharp--activate' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'sharp' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'sharp' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'sharp--activate' );
+							_e( 'Asides', 'sharp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'sharp--activate');
+							_e( 'Galleries', 'sharp');
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'sharp--activate');
+							_e( 'Images', 'sharp');
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'sharp--activate' );
+							_e( 'Videos', 'sharp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'sharp--activate' );
+							_e( 'Quotes', 'sharp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'sharp--activate' );
+							_e( 'Links', 'sharp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'sharp--activate' );
+							_e( 'Statuses', 'sharp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'sharp--activate' );
+							_e( 'Audios', 'sharp' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'sharp--activate' );
+							_e( 'Chats', 'sharp' );
 
 						else :
-							_e( 'Archives', 'sharp--activate' );
+							_e( 'Archives', 'sharp' );
 
 						endif;
 					?>
@@ -90,7 +90,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php sharp__activate_paging_nav(); ?>
+			<?php sharp_activate_paging_nav(); ?>
 
 		<?php else : ?>
 

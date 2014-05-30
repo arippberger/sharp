@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'sharp__activate_setup' ) ) :
+if ( ! function_exists( 'sharp_activate_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,15 +20,15 @@ if ( ! function_exists( 'sharp__activate_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function sharp__activate_setup() {
+function sharp_activate_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Sharp, use a find and replace
-	 * to change 'sharp--activate' to the name of your theme in all the template files
+	 * to change 'sharp' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'sharp--activate', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'sharp', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -42,14 +42,14 @@ function sharp__activate_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'sharp--activate' ),
+		'primary' => __( 'Primary Menu', 'sharp' ),
 	) );
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
 	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'sharp__activate_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'sharp_activate_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -63,17 +63,17 @@ function sharp__activate_setup() {
 		'caption',
 	) );
 }
-endif; // sharp__activate_setup
-add_action( 'after_setup_theme', 'sharp__activate_setup' );
+endif; // sharp_activate_setup
+add_action( 'after_setup_theme', 'sharp_activate_setup' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function sharp__activate_widgets_init() {
+function sharp_activate_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'sharp--activate' ),
+		'name'          => __( 'Sidebar', 'sharp' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -82,23 +82,23 @@ function sharp__activate_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 }
-add_action( 'widgets_init', 'sharp__activate_widgets_init' );
+add_action( 'widgets_init', 'sharp_activate_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function sharp__activate_scripts() {
-	wp_enqueue_style( 'sharp--activate-style', get_stylesheet_uri() );
+function sharp_activate_scripts() {
+	wp_enqueue_style( 'sharp-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'sharp--activate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'sharp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'sharp--activate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'sharp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'sharp__activate_scripts' );
+add_action( 'wp_enqueue_scripts', 'sharp_activate_scripts' );
 
 /**
  * Implement the Custom Header feature.

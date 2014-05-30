@@ -13,14 +13,14 @@
 			</aside>
 
 			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'sharp--activate' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Archives', 'sharp' ); ?></h1>
 				<ul>
 					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 				</ul>
 			</aside>
 
 			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'sharp--activate' ); ?></h1>
+				<h1 class="widget-title"><?php _e( 'Meta', 'sharp' ); ?></h1>
 				<ul>
 					<?php wp_register(); ?>
 					<li><?php wp_loginout(); ?></li>
@@ -30,3 +30,4 @@
 
 		<?php endif; // end sidebar widget area ?>
 	</div><!-- #secondary -->
+	<div class="clearfix"></div>
