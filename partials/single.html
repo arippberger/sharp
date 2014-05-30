@@ -1,0 +1,8 @@
+<!-- display all post titles in a list -->
+<div>
+	<article class="post blog-post">
+		<h2 class="blog-post-title">{{ post.title }}</h2>	
+		<p class="blog-post-meta">{{ post.date }} by <a href="{{ post.author.meta.self }}">{{ post.author.name }}</a></p>
+		<div class="entry-content" ng-bind-html="post.trustedHtml"></div>
+	</article>
+</div>

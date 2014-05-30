@@ -40,3 +40,19 @@ ctrls.controller('DateArchiveCtrl', function ($scope, $http, $routeParams) {
 		$scope.posts = data.data;
 	});
 });
+
+ctrls.controller('SingleCtrl', function ($scope, $http, $routeParams, $sce) {
+	$scope.post;
+	
+	//get month and year form routeParams
+	var list = $routeParams.list;
+	var id = $routeParams.id;
+
+	//site = $rootScope.site + '$routeParams'
+	$http.get('http://sharp.dev/wp-json/' + list + '/' + id).then(function (data) {
+		$scope.post = data.data;
+		//trust post body
+		$scope.post.trustedHtml = $sce.trustAsHtml($scope.post.content)
+	});
+});
+

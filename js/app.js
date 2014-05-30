@@ -34,6 +34,7 @@ SharpApp.config(function ($routeProvider) {
   $routeProvider
   .when("/date/:month/:year", {controller: "DateArchiveCtrl", templateUrl: BlogInfo.url + "partials/date_archive.html"})
   .when("/:list", {controller: "PostsListCtrl", templateUrl: BlogInfo.url + "partials/post_list.html"})
+  .when("/:list/:id", {controller: "SingleCtrl", templateUrl: BlogInfo.url + "partials/single.html"})
   .otherwise({redirectTo: "/posts"})
 });
 
