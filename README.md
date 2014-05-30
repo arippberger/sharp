@@ -23,6 +23,7 @@ TODO
 ----
   - Add "active" class to pages in navigation
   - Modify other default widgets so they are compatible with Angular.js
+  - Clean up unused files (theme cloned from _S)
   
 How It Works
 ------------
@@ -50,5 +51,6 @@ Credits
   - TGM Plugin Activation Class by Thomas Griffin (http://thomasgriffinmedia.com/)
   - JSON REST API (WP API) by Ryan McCue (http://ryanmccue.info/)
   - Angular.js tutorial by  Treehouse Island, Inc (http://teamtreehouse.com/library/building-with-angularjs-and-apis)
+  - Underscores WordPress Theme (http://underscores.me/)
   
 
