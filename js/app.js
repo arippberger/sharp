@@ -5,7 +5,8 @@ var SharpApp = angular.module('sharp', [
     'sharp.filters',
     'sharp.directives',
     'sharp.services',
-    'ngRoute'
+    'ngRoute',
+    'ui.router'
 ]);
 
 //set the configuration
